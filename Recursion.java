@@ -26,6 +26,16 @@ public class Recursion{
     return fibH(n-1,second,first+second);
   }
   
+  public static ArrayList<Integer> makeAllSums(int n){
+    ArrayList<Integer> sums = new ArrayList<>();
+    if(n==0) sums.add(0);
+    else{
+      sums = 
+    }
+    
+  }
+ 
+  
   
  public static void main(String args[]){
    //System.out.println(sqrt(100,0.00001));
