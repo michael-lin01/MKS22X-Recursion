@@ -30,25 +30,20 @@ public class Recursion{
   
   public static ArrayList<Integer> makeAllSums(int n){
     ArrayList<Integer> sums = new ArrayList<>();
-    return makeAllSumsH(n,sums);
+    makeAllSumsH(n,0,sums);
+    return sums;
   }
 
-  private static ArrayList<Integer> makeAllSumsH(int n, ArrayList<Integer> sums){
-    if(n==0) {
-      sums.add(0);
-      return sums;
+
+  private static void makeAllSumsH(int n, int partial, ArrayList<Integer> sums){
+    if(n==0){
+      sums.add(partial);
     }
     else{
-      int size = sums.size();
-      for(int i = 0; i<size;i++){
-        //System.out.println("sums(i): "+sums.get(i));
-        sums.add(sums.get(i)+n);
-      }
-      sums.add(n);
-      return makeAllSumsH(n-1,sums);
+      makeAllSumsH(n-1,partial,sums);
+      makeAllSumsH(n-1,partial+n,sums);
     }
   }
-  
   
  public static void main(String args[]){
    //System.out.println(sqrt(100,0.00001));
@@ -57,6 +52,6 @@ public class Recursion{
     System.out.println(fib(i));
    }
    */
-  System.out.println(makeAllSums(4));
+  System.out.println(makeAllSums(3));
  }
 }
