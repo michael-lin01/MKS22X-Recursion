@@ -13,7 +13,7 @@ public class Recursion{
   }
 
   private static double sqrtH(double n, double guess, double tolerance){
-     if(Math.abs((n-(guess*guess)) / n)  <= tolerance) {
+     if(Math.abs((n-(guess*guess)) / n )  <= tolerance/100) {
        return guess;
     }
     return sqrtH(n, (n/guess+guess)/2,tolerance);
@@ -46,12 +46,13 @@ public class Recursion{
   }
   
  public static void main(String args[]){
-   //System.out.println(sqrt(100,0.00001));
-   /*
+   System.out.println(sqrt(100,0.001));
+   System.out.println(sqrt(10,0.001));
+   System.out.println(sqrt(2,0.001));
    for(int i = 0; i < 15; i++){
     System.out.println(fib(i));
    }
-   */
   System.out.println(makeAllSums(3));
+  System.out.println(makeAllSums(4));
  }
 }
